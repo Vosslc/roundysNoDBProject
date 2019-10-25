@@ -11,16 +11,15 @@ app.use(express.json())
 
 // ENDPOINTS:
 const beerUrl = "/api/beer"
-// app.post()
-app.get( beerUrl, ctrl.read);
+app.post( beerUrl, ctrl.create )
+app.get( beerUrl, ctrl.read );
 
 //CODE bellow is without a controller
 // app.get( beerUrl, (req, res, next) => { 
 //   res.status(200).send(beer)
 // });
-
-// app.put()
-// app.delete()
+app.put( beerUrl, ctrl.update )
+app.delete( beerUrl, ctrl.delete )
 
 
 app.listen(SERVER_PORT, () => console.log(`${SERVER_PORT} beer is proof God loves us.`))
