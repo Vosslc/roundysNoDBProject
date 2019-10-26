@@ -5,4 +5,13 @@
   "style":"IPA",
   "abv": "7.2",
   "list": "beerWishList"
-}]
+},
+{
+  "id":"1",
+  "brewery":"Uinta",
+  "name":"Baba",
+  "style":"Black Lager",
+  "abv": "4",
+  "list": "beerWishList"
+}
+]

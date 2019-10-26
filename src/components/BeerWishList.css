@@ -1,0 +1,15 @@
+.wishList {
+  border: solid;
+  
+}
+
+.beerInfo {
+  color: rgb(72, 21, 21);
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+
+}
