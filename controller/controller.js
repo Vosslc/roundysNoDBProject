@@ -1,12 +1,33 @@
 // const beersCtrl
 // let id = 1;
-const beer = require('../server/beerList.json')
+let id = 0;
+const beer = [{
+  id:0,
+  brewery:"Uinta",
+  name:"Hop Nosh",
+  style:"IPA",
+  abv: "7.2",
+  list: "beerWishList"
+},
+{
+  id:1,
+  brewery:"Uinta",
+  name:"Baba",
+  style:"Black Lager",
+  abv: "4",
+  list: "beerWishList"
+}
+]
 
 
 
 module.exports = {
 create: (req, res, next) => {
-
+  const { brewery } = req.body;
+  beer.push({ id, brewery });
+  id++;
+  console.log(brewery)
+  console.log(req.body)
   res.status(200).send(beer)
 },
 

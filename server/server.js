@@ -22,5 +22,5 @@ app.put( beerUrl, ctrl.update )
 app.delete( beerUrl, ctrl.delete )
 
 
-app.listen(SERVER_PORT, () => console.log(`${SERVER_PORT} beer is proof God loves us.`))
+app.listen(SERVER_PORT, () => console.log(`${SERVER_PORT} beers on the wall.`))
 
