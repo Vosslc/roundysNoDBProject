@@ -23,7 +23,9 @@ class BeerWishList extends Component {
     this.handleChangeStyle = this.handleChangeStyle.bind( this );
     this.handleChangeAbv = this.handleChangeAbv.bind( this );
   }
-
+  
+  
+  // ****AXIOS SERVER CALLS****
   componentDidMount(){
     axios.get('/api/beer').then(response => {
       this.setState({
@@ -56,7 +58,7 @@ class BeerWishList extends Component {
     this.setState({ abv: event.target.value });
   }
 
-
+// ********
   render() {
     console.log(this.state)
     return (
@@ -72,6 +74,7 @@ class BeerWishList extends Component {
             <p>Name: {el.name}</p>
             <p>Style: {el.style}</p>
             <p>ABV: {el.abv}%</p>
+            <br/>
             <br/>
           </div>
         ))}

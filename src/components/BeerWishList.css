@@ -1,16 +1,26 @@
-.wishList {
-  border: solid;
-  
+h1{
+	color: yellow;
+	font-weight: bold;
+	font-family: 'Fjalla One', sans-serif;
+	text-align: center;
+}
+
+.wishList{
+	content: "";
+	background-color: black;
+	opacity: 0.7;
 }
 
 .beerInfo {
-  color: rgb(72, 21, 21);
+	color: yellow;
+	font-weight: bold;
+	font-family: 'Fjalla One', sans-serif;
   display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
-	border-bottom: 3px solid black;
-
+	border-bottom: 3px solid yellow; 
+/* border-bottem is being afected by the opacity */
 }

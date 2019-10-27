@@ -20,7 +20,7 @@ import FooterJokes from './components/FooterJokes'
 
 function App() {
   return (
-    <div>
+    <div className="Container">
       <Header />
       <div className="App">
         <BeerWishList />

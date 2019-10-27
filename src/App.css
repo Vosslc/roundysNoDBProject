@@ -1,6 +1,21 @@
 /* CSS Reset */
 @import-normalize; /* bring in normalize.css styles */
 
+.Container:after{
+	content: "";
+	background-image: url(./pint2.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	opacity: 0.85;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+}
 
 .App {
   display: flex;
@@ -11,3 +26,14 @@
 	align-content: stretch;
 	padding-top: 2rem;
 }
+
+
+.App {
+	/* background: black;
+	opacity: .5;
+	color: red; */
+	
+}
+
+
+
