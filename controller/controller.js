@@ -23,8 +23,8 @@ const beer = [{
 
 module.exports = {
 create: (req, res, next) => {
-  const { brewery } = req.body;
-  beer.push({ id, brewery });
+  const { brewery, name, style, abv } = req.body;
+  beer.push({ id, brewery, name, style, abv });
   id++;
   console.log(brewery)
   console.log(req.body)

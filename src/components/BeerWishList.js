@@ -18,33 +18,43 @@ class BeerWishList extends Component {
 
     }
 
-    this.handleChangeBeerValue = this.handleChangeBeerValue.bind( this );
+    this.handleChangeBrewery = this.handleChangeBrewery.bind( this );
+    this.handleChangeName = this.handleChangeName.bind( this );
+    this.handleChangeStyle = this.handleChangeStyle.bind( this );
+    this.handleChangeAbv = this.handleChangeAbv.bind( this );
   }
 
   componentDidMount(){
-    axios.get('/api/beer').then(jsonBeerList => {
+    axios.get('/api/beer').then(response => {
       this.setState({
-        wishList: jsonBeerList.data
+        wishList: response.data
       })
     })
   }
 
   addBeer(){
-    console.log("Button has been clicked ")
-    const { brewery } = this.state;
-    axios.post('/api/beer', {brewery}).then(jsonBeerList => {
-      // this.setState({
-      console.log(jsonBeerList)
-      // })
+    const { brewery, name, style, abv } = this.state;
+    axios.post('/api/beer', {brewery, name, style, abv}).then(response => {
+      this.setState({
+        wishList: response.data
+      })
     })
   }
 
-  handleChangeBeerValue(event){
+
+  // ****HANDLE CHANGE METHODS****
+  handleChangeBrewery(event){
     this.setState({ brewery: event.target.value });
-
-    console.log("hit1")
   }
-
+  handleChangeName(event){
+    this.setState({ name: event.target.value });
+  }
+  handleChangeStyle(event){
+    this.setState({ style: event.target.value });
+  }
+  handleChangeAbv(event){
+    this.setState({ abv: event.target.value });
+  }
 
 
   render() {
@@ -62,27 +72,26 @@ class BeerWishList extends Component {
             <p>Name: {el.name}</p>
             <p>Style: {el.style}</p>
             <p>ABV: {el.abv}%</p>
-            <hr/>
             <br/>
           </div>
         ))}
         <div id="">
           
           <input placeholder="Brewery" 
-          onChange={ this.handleChangeBeerValue }
+          onChange={ this.handleChangeBrewery }
           value={ this.state.brewery }
           />
           <input placeholder="Name" 
-          onChange={ this.handleChangeBeerValue }
-          value={ this.state.brewery }
+          onChange={ this.handleChangeName }
+          value={ this.state.name }
           />
           <input placeholder="Style" 
-          onChange={ this.handleChangeBeerValue }
-          value={ this.state.brewery }
+          onChange={ this.handleChangeStyle }
+          value={ this.state.style }
           />
           <input placeholder="ABV" 
-          onChange={ this.handleChangeBeerValue }
-          value={ this.state.brewery }
+          onChange={ this.handleChangeAbv }
+          value={ this.state.abv }
           />
           <button onClick={ (e) => {this.addBeer()}}>Add</button>
           {/* <button onClick={this.clicked}>Enter</button> */}
