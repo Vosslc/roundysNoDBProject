@@ -18,7 +18,7 @@ app.get( beerUrl, ctrl.read );
 // app.get( beerUrl, (req, res, next) => { 
 //   res.status(200).send(beer)
 // });
-app.put( beerUrl, ctrl.update )
+app.put( `${beerUrl}/:id`, ctrl.update )
 app.delete( beerUrl, ctrl.delete )
 
 

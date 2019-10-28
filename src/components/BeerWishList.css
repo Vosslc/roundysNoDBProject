@@ -9,6 +9,8 @@ h1{
 	content: "";
 	background-color: black;
 	opacity: 0.7;
+	overflow: scroll;
+	height: 500px;
 }
 
 .beerInfo {
@@ -23,4 +25,5 @@ h1{
 	align-content: stretch;
 	border-bottom: 3px solid yellow; 
 /* border-bottem is being afected by the opacity */
+	
 }

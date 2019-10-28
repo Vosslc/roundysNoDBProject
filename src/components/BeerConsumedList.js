@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import './BeerConsumedList.css'
+import Beer from './Beer'
 
 class BeerConsumedList extends Component {
   constructor(){
@@ -13,8 +14,9 @@ class BeerConsumedList extends Component {
   // ****AXIOS SERVER CALLS****
   componentDidMount(){
     axios.get('/api/beer').then(response => {
+      const consumedList = response.data.filter(element => element.list === "beerConsumedList")
       this.setState({
-        consumedList: response.data
+        consumedList: consumedList
       })
     })
   }
@@ -25,16 +27,13 @@ class BeerConsumedList extends Component {
         <header>
           <h1>Beers Consumed List</h1>
         </header>
-        <hr/>
-        <hr/>
+        <br/>
         {this.state.consumedList.map((el, index) =>(
-          <div className='beerInfo' key={index}>
-            <p>Brewery: {el.brewery}</p>
-            <p>Name: {el.name}</p>
-            <p>Style: {el.style}</p>
-            <p>ABV: {el.abv}%</p>
-            <br/>
-          </div>
+          <Beer
+            shouldShowDrinkBtn={false}
+            el={el} 
+            index={index} 
+          />
         ))}
       </div>
     );

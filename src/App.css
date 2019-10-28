@@ -14,7 +14,8 @@
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1; 
+	z-index: -1; 
+	
 }
 
 .App {
@@ -25,6 +26,7 @@
 	align-items: center;
 	align-content: stretch;
 	padding-top: 2rem;
+	/* height: 100vh; */
 }
 
 

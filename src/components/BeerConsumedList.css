@@ -1,6 +1,10 @@
 .consumedList {
   border: solid;
-  
+	content: "";
+	background-color: black;
+	opacity: 0.7;
+	overflow: scroll;
+	height: 500px;
 }
 
 .beerInfo {
@@ -12,5 +16,6 @@
 	align-items: center;
 	align-content: stretch;
 	border-bottom: 3px solid black;
+	
 
 }

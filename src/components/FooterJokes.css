@@ -1,0 +1,24 @@
+.container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
+/* .jokeCon{
+	content: "";
+	background-color: black;
+	opacity: 0.7;
+	overflow: scroll;
+	
+} */
+
+h5 {
+	
+	color: yellow;
+	font-weight: bold;
+	font-family: 'Fjalla One', sans-serif;
+	text-align: center;
+}

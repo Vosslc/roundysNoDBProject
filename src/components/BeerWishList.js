@@ -6,15 +6,15 @@ import './BeerWishList.css'
 
 
 class BeerWishList extends Component {
-  constructor(){
+  constructor(props){
 
-    super()
+    super(props)
     this.state = {
       wishList: [],
       brewery: '',
       name: '',
       style: '',
-      abv: ''
+      abv: '',
 
     }
 
@@ -22,14 +22,16 @@ class BeerWishList extends Component {
     this.handleChangeName = this.handleChangeName.bind( this );
     this.handleChangeStyle = this.handleChangeStyle.bind( this );
     this.handleChangeAbv = this.handleChangeAbv.bind( this );
+    this.drinkBeer = this.drinkBeer.bind( this );
   }
   
   
   // ****AXIOS SERVER CALLS****
   componentDidMount(){
     axios.get('/api/beer').then(response => {
+      const wishList = response.data.filter(element => element.list === "beerWishList")
       this.setState({
-        wishList: response.data
+        wishList: wishList
       })
     })
   }
@@ -37,11 +39,33 @@ class BeerWishList extends Component {
   addBeer(){
     const { brewery, name, style, abv } = this.state;
     axios.post('/api/beer', {brewery, name, style, abv}).then(response => {
+      const wishList = response.data.filter(element => element.list === "beerWishList")
       this.setState({
-        wishList: response.data
+        wishList: wishList
       })
     })
   }
+
+  drinkBeer(id, body){
+    axios.put(`/api/beer/${id}`, body).then(response => { //${id} this is a FUCKING param
+      console.log(response)
+      const wishList = response.data.filter(element => element.list === "beerWishList")
+      this.setState({
+        wishList: wishList
+      })
+    })
+    window.location.reload(true); //had to force refresh. Becuase beerConsumedList.js is not rendering when you drink the beer
+    }
+
+    // deleteBeer(id) {
+    //   axios
+    //     .delete(`/api/beer/${id}`)
+    //     .then(response => {
+    //       const wishList = response.data.filter(element => element.list === "beerWishList")
+    //       this.setState({
+    //         wishList: wishList
+    //       })
+    //     })
 
 
   // ****HANDLE CHANGE METHODS****
@@ -60,24 +84,12 @@ class BeerWishList extends Component {
 
 // ********
   render() {
-    console.log(this.state)
     return (
       <div className='wishList'>
         <header>
           <h1>Beer Wish List</h1>
         </header>
-        <hr/>
-        <hr/>
-        {this.state.wishList.map((el, index) =>(
-          <div className='beerInfo' key={index}>
-            <p>Brewery: {el.brewery}</p>
-            <p>Name: {el.name}</p>
-            <p>Style: {el.style}</p>
-            <p>ABV: {el.abv}%</p>
-            <br/>
-            <br/>
-          </div>
-        ))}
+
         <div id="">
           
           <input placeholder="Brewery" 
@@ -97,10 +109,17 @@ class BeerWishList extends Component {
           value={ this.state.abv }
           />
           <button onClick={ (e) => {this.addBeer()}}>Add</button>
-          {/* <button onClick={this.clicked}>Enter</button> */}
-
+          <br/>
+          <br/>
+          {this.state.wishList.map((el, index) =>(
+            <Beer
+              shouldShowDrinkBtn={true}    // <------ Beer is being imported from Beer.js this is how you start props
+              drinkBeer={this.drinkBeer} //this is props. drinkBeer, is passing the function this.drinkBeer down to the child. Which is located in Beer.js file. 
+              el={el} 
+              index={index} 
+            />
+        ))}
         </div>
-        <br/> 
       </div>
     );
   }
