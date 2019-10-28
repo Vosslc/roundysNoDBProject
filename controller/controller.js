@@ -40,7 +40,7 @@ read: (req, res, next) => {
 },
 
 update: (req, res, next) => {
-  const {list} = req.body // the body comes from Beer.js line 17 col73 button
+  const {list} = req.body // the body comes from Beer.js line 17 button
   const id = req.params.id
   const beerIndex = beer.findIndex(beer => beer.id == id)
   let beer1 = beer[beerIndex];

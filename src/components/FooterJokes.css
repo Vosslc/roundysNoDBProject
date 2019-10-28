@@ -22,3 +22,12 @@ h5 {
 	font-family: 'Fjalla One', sans-serif;
 	text-align: center;
 }
+
+.jokeCon {
+	color: red;
+	content: "";
+	background-color: black;
+	opacity: 0.7;
+	overflow: scroll;
+	font-weight: bold;
+}

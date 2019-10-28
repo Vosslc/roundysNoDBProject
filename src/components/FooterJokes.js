@@ -7,26 +7,51 @@ class FooterJokes extends Component {
     super(props)
 
     this.state = { 
-      random: 0 
+      joke: ''
     }
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleJoke = this.handleJoke.bind(this);
   }
 
-  handleClick() {
-    const min = 1;
-    const max = 100;
-    const rand = min + Math.random() * (max - min);
-    this.setState({ random: this.state.random + rand });
+  handleJoke() {
+    
+    const randomNum = Math.ceil(Math.random() * 6)
+    console.log(randomNum)
+    if ( randomNum === 1 ) {
+      this.setState({
+        joke: "What is Beethoven's favorite fruit? Ba-na-na-nas."
+      })
+    }else if ( randomNum === 2 ) {
+      this.setState({
+        joke: "Why do seagulls live by the sea? Cause if they lived by the bay, they'd be bagels."
+      })
+    }else if ( randomNum === 3 ) {
+      this.setState({
+        joke: "A burger walks into a bar. The bartender says 'Sorry, we don't serve food here'"
+      })
+    }else if ( randomNum === 4 ) {
+      this.setState({
+        joke: "How do you find Will Smith in the snow? Look for fresh prints."
+      })
+    }else if ( randomNum === 5) {
+      this.setState({
+        joke: "I'm reading a book about anti-gravity. I can't put it down."
+      })
+    }else if ( randomNum === 6) {
+      this.setState({
+        joke: "My dolphin puns are terrible on porpoise."
+      })
+    }
+    
   }
 
   render() {
     return (
       <div className="container">
-        <div className="jokeCon">
         <h1>Dad Jokes</h1>
-        <button onClick={this.handleClick.bind(this)}>Click</button>
-        <div>{this.state.random}</div>
+        <button onClick={this.handleJoke}>Click for Joke</button>
+        <div className="jokeCon">
+        <div>{this.state.joke}</div>
         </div>
       </div>
     );

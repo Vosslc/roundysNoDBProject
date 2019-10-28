@@ -1,5 +1,5 @@
 require('dotenv').config()
-const beer = require('./beerList.json')
+// const beer = require('./beerList.json')
 const express = require('express')
 const {SERVER_PORT} = process.env
 const ctrl = require('../controller/controller')
