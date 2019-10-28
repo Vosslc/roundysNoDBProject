@@ -14,18 +14,28 @@ class Beer extends Component {
     return (
       <div className='beerInfo' key={this.props.index}>
         
-        {this.props.shouldShowDrinkBtn ? <button onClick={() => this.props.drinkBeer(this.props.el.id, {list: "beerConsumedList"})}>Drink</button> : null}
-         {/* the line above is using props. Its parent is BeerWishList line 100 */}
+        {this.props.shouldShowDrinkBtn ? 
+        <button onClick={() => this.props.drinkBeer(this.props.el.id, {list: "beerConsumedList"})}>
+          Drink
+        </button> : null}
+         {/* the line above is using props. Its parent is BeerWishList */}
         <p>Brewery: {this.props.el.brewery}</p>
         <p>Name: {this.props.el.name}</p>
         <p>Style: {this.props.el.style}</p>
         <p>ABV: {this.props.el.abv}%</p>
-        <button>Delete</button>
+        {this.props.shouldShowDrinkBtn ?
+        <button onClick={() => this.props.deleteBeer(this.props.el.id)}>
+          Delete
+        </button> : null}
         <br/>
         <br/>
       </div>
-);
+    );
   }
 }
 
 export default Beer;
+{/* {this.props.shouldShowDrinkBtn ?
+<button onClick={this.props.deleteBeer(this.props.el.id, {list: "beerWishList"})}>
+  Delete
+</button> : null} */}

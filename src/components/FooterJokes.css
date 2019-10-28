@@ -6,6 +6,14 @@
 	align-items: center;
 	align-content: stretch;
 }
+.container p {
+	font-weight: bold;
+	color: red;
+	font-size: 50px;
+	margin: 0;
+	margin-top: 25px;
+	/* width: 300px */
+}
 
 /* .jokeCon{
 	content: "";
@@ -17,7 +25,7 @@
 
 h5 {
 	
-	color: yellow;
+	/* color: rgb(246, 0, 0); */
 	font-weight: bold;
 	font-family: 'Fjalla One', sans-serif;
 	text-align: center;

@@ -1,10 +1,17 @@
-.consumedList {
+/* .consumedList {
   border: solid;
 	content: "";
 	background-color: black;
 	opacity: 0.7;
 	overflow: scroll;
 	height: 500px;
+} */
+
+.consumedList {
+	background: rgba(0, 0, 0, 0.7);
+	overflow: scroll;
+	height: 500px;
+	width: 180px;
 }
 
 .beerInfo {

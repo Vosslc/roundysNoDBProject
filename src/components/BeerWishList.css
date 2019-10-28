@@ -1,3 +1,7 @@
+.consumedList{
+	width: 559.95px;
+}
+
 h1{
 	color: yellow;
 	font-weight: bold;
@@ -5,13 +9,29 @@ h1{
 	text-align: center;
 }
 
-.wishList{
+/* .wishList{
 	content: "";
 	background-color: black;
 	opacity: 0.7;
 	overflow: scroll;
 	height: 500px;
+} */
+
+.wishList{
+	background: rgba(0, 0, 0, 0.7);
+	overflow: scroll;
+	height: 500px;
+	padding-left: 5px;
 }
+
+
+#inputField input{
+	color:red;
+	font-weight: bolder;
+	opacity: 1;
+	
+}
+
 
 .beerInfo {
 	color: yellow;
@@ -26,4 +46,33 @@ h1{
 	border-bottom: 3px solid yellow; 
 /* border-bottem is being afected by the opacity */
 	
+}
+.btn{
+	background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 0px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+	font-size: 12px;
+	font-weight: bolder;
+  margin: 3px 3px;
+  cursor: pointer;
+}
+
+
+.btn:hover {
+	
+  color: #9050AA;
+  border-color: currentColor;
+	background-color: white;
+	
+}
+
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.5),
+    0 0 0 1.5px rgba(255, 105, 180, 0.5);
 }

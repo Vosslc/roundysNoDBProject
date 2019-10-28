@@ -24,9 +24,10 @@ function App() {
       <Header />
       <div className="App">
         <BeerWishList />
+        <FooterJokes />
         <BeerConsumedList />
       </div>
-      <FooterJokes />
+      
     </div>
   );
 }

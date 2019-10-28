@@ -48,7 +48,7 @@ class FooterJokes extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Dad Jokes</h1>
+        <p>Dad Jokes</p>
         <button onClick={this.handleJoke}>Click for Joke</button>
         <div className="jokeCon">
         <div>{this.state.joke}</div>

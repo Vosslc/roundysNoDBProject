@@ -19,7 +19,7 @@ app.get( beerUrl, ctrl.read );
 //   res.status(200).send(beer)
 // });
 app.put( `${beerUrl}/:id`, ctrl.update )
-app.delete( beerUrl, ctrl.delete )
+app.delete( `${beerUrl}/:id`, ctrl.delete )
 
 
 app.listen(SERVER_PORT, () => console.log(`${SERVER_PORT} beers on the wall.`))

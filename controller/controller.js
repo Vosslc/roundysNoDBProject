@@ -40,7 +40,7 @@ read: (req, res, next) => {
 },
 
 update: (req, res, next) => {
-  const {list} = req.body // the body comes from Beer.js line 17 button
+  const {list} = req.body // the body comes from Beer.js Drink button
   const id = req.params.id
   const beerIndex = beer.findIndex(beer => beer.id == id)
   let beer1 = beer[beerIndex];
@@ -57,7 +57,12 @@ update: (req, res, next) => {
 },
 
 delete: (req, res, next) => {
-  
+
+
+  const {list} = req.body
+  const id = req.params.id
+  const beerIndex = beer.findIndex(beer => beer.id == id)
+  beer.splice(beerIndex, 1)  
   res.status(200).send(beer)
 },
 
